@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>#10 Assignment</title>
+	</head>
+	<body>
+		<form action="" id="account-form">
+			Your Name:<br><input name="user-name" type="text" id="userNameBox"></input>
+			<br>
+			
+			Your Email:<br><input name="user-email" type="text" id="userEmailBox"></input>
+			<br>
+			
+			*Login:<br><input name="user-login" id="userLoginBox"></input>
+			<br>
+
+			*Password:<br><input name="user-pw" id="userPwBox"></input>
+			<br>
+
+			<input type="button" onclick="submitForm()" value="submit">
+			<br>
+		</form> 
+	</body>
+
+	<script>
+		function submitForm(){
+			var form = document.getElementById("account-form");
+			var username = form.elements["user-login"].value;
+			var password = form.elements["user-pw"].value;
+
+			if(username == "" || password == ""){
+				alert("You need to have a username and a password. Try again!")
+			}else{
+				form.submit();
+				alert("Submitted! Your username is " + username + ". Your password is: " + password);
+			}
+		}
+	</script>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>#10 Assignment</title>
+	</head>
+	<body>
+		<form action="" id="account-form">
+			Your Name:<br><input name="user-name" type="text" onfocus="handleOnFocus(this)" onblur="handleOnBlur(this)"></input>
+			<div id="name" class="desc">This is where you put your name.</div>
+			<br>
+			
+			Your Email:<br><input name="user-email" type="text" onfocus="handleOnFocus(this)" onblur="handleOnBlur(this)"></input>
+			<div id="email" class="desc">This is where you put your email.</div>
+			<br>
+			
+			*Login:<br><input name="user-login" onfocus="handleOnFocus(this)" onblur="handleOnBlur(this)"></input>
+			<div id="login" class="desc">This is where you put your login.</div>
+			<br>
+
+			*Password:<br><input name="user-pw" onfocus="handleOnFocus(this)" onblur="handleOnBlur(this)"></input>
+			<div id="password" class="desc">This is where you put your password.</div>
+			<br>
+
+			<input type="button" onclick="submitForm()" value="submit">
+			<br>
+		</form> 
+	</body>
+
+	<style>
+		.desc{
+			display: none;
+		}
+	</style>
+
+	<script> 
+		function handleOnFocus(x)
+		{
+		   var name = x.getAttribute("name");
+		   if(name == "user-name"){
+		   		document.getElementById("name").style.display = "block";
+		   }else if(name == "user-email"){
+		   		document.getElementById("email").style.display = "block";
+		   }else if(name == "user-login"){
+		   		document.getElementById("login").style.display = "block";
+		   }else if(name == "user-pw"){
+		   		document.getElementById("password").style.display = "block";
+		   }
+		}
+
+		function handleOnBlur(x)
+		{
+		   var name = x.getAttribute("name");
+		   if(name == "user-name"){
+		   		document.getElementById("name").style.display = "none";
+		   }else if(name == "user-email"){
+		   		document.getElementById("email").style.display = "none";
+		   }else if(name == "user-login"){
+		   		document.getElementById("login").style.display = "none";
+		   }else if(name == "user-pw"){
+		   		document.getElementById("password").style.display = "none";
+		   }
+
+		   console.log(name);
+		}
+	</script>
+</html>
